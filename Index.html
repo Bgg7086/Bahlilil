@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tombol Nakal</title>
+  <style>
+    body {
+      height: 100vh;
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    #teks {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    .tombol {
+      position: absolute;
+      padding: 12px 30px;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="teks">apakah anda yakin tidak menyesal nanti</div>
+
+  <a href="Bahlil terang.html" id="btn" class="tombol">OPEN</a>
+
+  <script>
+    let klik = 0;
+    const btn = document.getElementById("btn");
+    const teks = document.getElementById("teks");
+
+    btn.addEventListener("click", function (e) {
+      if (klik < 3) {
+        e.preventDefault(); // cegah pindah halaman
+        klik++;
+
+        // pindahkan tombol ke posisi random
+        const x = Math.random() * 80;
+        const y = Math.random() * 80;
+        btn.style.left = x + "%";
+        btn.style.top = y + "%";
+
+        if (klik === 3) {
+          teks.innerText = "yakin tak menyesal nanti";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

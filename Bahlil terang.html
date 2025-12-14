@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Lanjutan</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 80%;
+      margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .btn {
+      position: absolute;
+      padding: 12px 28px;
+      background: red;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>😈 Selamat datang 😈</h2>
+
+  <!-- FOTO -->
+  <img src="B.jpg" alt="gambar">
+
+  <!-- AUDIO -->
+  <audio id="suara" autoplay>
+    <source src="A.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- TOMBOL KEMBALI -->
+  <a href="index.html" id="kembali" class="btn">KEMBALI</a>
+
+  <script>
+    const btn = document.getElementById("kembali");
+    let hitung = 0;
+
+    // Untuk autoplay di browser (jika diblokir)
+    document.body.addEventListener("click", () => {
+      document.getElementById("suara").play();
+    });
+
+    btn.addEventListener("click", function(e) {
+      if (hitung < 10) {
+        e.preventDefault();
+        hitung++;
+
+        const x = Math.random() * 80;
+        const y = Math.random() * 80;
+        btn.style.left = x + "%";
+        btn.style.top = y + "%";
+      }
+    });
+  </script>
+
+</body>
+</html>
