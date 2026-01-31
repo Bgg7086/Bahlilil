@@ -1,7 +1,6 @@
 const siswa = [
   "Abian Arshavin",
   "Ahmad Miladi",
-  "Ahmad Nabil Astami (BIC)",
   "Andra Putra Zibran",
   "Annisa Rizki Faizal",
   "Azka Rizqi Heryansyah",
